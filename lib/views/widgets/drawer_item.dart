@@ -10,7 +10,7 @@ class DrawerItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: SvgPicture.asset(drawerItemModel.img),
-      title: Text(drawerItemModel.img, style: AppStyles.styleRegular16),
+      title: Text(drawerItemModel.title, style: AppStyles.styleRegular16),
     );
   }
 }
