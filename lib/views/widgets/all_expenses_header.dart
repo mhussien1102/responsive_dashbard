@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_dashbard/utils/app_styles.dart';
 
-import '../../utils/app_styles.dart';
-
-class AllExpensessHeader extends StatelessWidget {
-  const AllExpensessHeader({super.key});
+class AllExpensesHeader extends StatelessWidget {
+  const AllExpensesHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
