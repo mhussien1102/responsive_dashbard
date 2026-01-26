@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_dashbard/models/all_expensess_item_model.dart';
 import 'package:responsive_dashbard/utils/app_styles.dart';
+import 'package:responsive_dashbard/views/widgets/all_expensess_item.dart';
 
+import '../../utils/app_images.dart';
 import 'all_expenses_header.dart';
 
 class AllExpensess extends StatelessWidget {
@@ -14,7 +17,20 @@ class AllExpensess extends StatelessWidget {
         color: Colors.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       ),
-      child: Column(children: [AllExpensesHeader()]),
+      child: Column(
+        children: [
+          AllExpensesHeader(),
+          SizedBox(height: 16),
+          AllExpensessItem(
+            itemModel: AllExpensessItemModel(
+              img: Assets.imagesIncome,
+              title: 'Income',
+              data: 'April 2022',
+              price: r'$20,129',
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
