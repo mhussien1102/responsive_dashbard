@@ -29,11 +29,15 @@ class AllExpensessItemListView extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: items.length,
-      itemBuilder: (context, index) {
-        return AllExpensessItem(itemModel: items[index]);
-      },
+    return SizedBox(
+      height: 500,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: items.length,
+        itemBuilder: (context, index) {
+          return AllExpensessItem(itemModel: items[index]);
+        },
+      ),
     );
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:responsive_dashbard/models/all_expensess_item_model.dart';
 import 'package:responsive_dashbard/utils/app_styles.dart';
 import 'package:responsive_dashbard/views/widgets/all_expensess_item.dart';
+import 'package:responsive_dashbard/views/widgets/all_expensess_item_list_view.dart';
 
 import '../../utils/app_images.dart';
 import 'all_expenses_header.dart';
@@ -21,14 +22,7 @@ class AllExpensess extends StatelessWidget {
         children: [
           AllExpensesHeader(),
           SizedBox(height: 16),
-          AllExpensessItem(
-            itemModel: AllExpensessItemModel(
-              img: Assets.imagesIncome,
-              title: 'Income',
-              data: 'April 2022',
-              price: r'$20,129',
-            ),
-          ),
+          AllExpensessItemListView(),
         ],
       ),
     );
