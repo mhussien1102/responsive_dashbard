@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_dashbard/models/all_expensess_item_model.dart';
+import 'package:responsive_dashbard/utils/app_styles.dart';
 import 'package:responsive_dashbard/views/widgets/all_expensess_header_item.dart';
 
 class AllExpensessItem extends StatelessWidget {
@@ -17,7 +18,18 @@ class AllExpensessItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
         ),
       ),
-      child: Column(children: [AllExpensessHeaderItem(img: itemModel.img)]),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          AllExpensessHeaderItem(img: itemModel.img),
+          SizedBox(height: 34),
+          Text(itemModel.title, style: AppStyles.styleSemiBold16),
+          SizedBox(height: 8),
+          Text(itemModel.data, style: AppStyles.styleRegular14),
+          SizedBox(height: 16),
+          Text(itemModel.price, style: AppStyles.styleSemiBold24),
+        ],
+      ),
     );
   }
 }
