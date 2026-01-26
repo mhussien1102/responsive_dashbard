@@ -9,6 +9,12 @@ class AllExpensessItemListView extends StatelessWidget {
 
   static const items = [
     AllExpensessItemModel(
+      img: Assets.imagesBalance,
+      title: 'Balance',
+      data: 'April 2022',
+      price: r'$20,129',
+    ),
+    AllExpensessItemModel(
       img: Assets.imagesIncome,
       title: 'Income',
       data: 'April 2022',
@@ -17,12 +23,6 @@ class AllExpensessItemListView extends StatelessWidget {
     AllExpensessItemModel(
       img: Assets.imagesExpenses,
       title: 'Expenses',
-      data: 'April 2022',
-      price: r'$20,129',
-    ),
-    AllExpensessItemModel(
-      img: Assets.imagesIncome,
-      title: 'Balance',
       data: 'April 2022',
       price: r'$20,129',
     ),
@@ -41,11 +41,13 @@ class AllExpensessItemListView extends StatelessWidget {
           return Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12),
-              child: AllExpensessItem(itemModel: item),
+              child: AllExpensessItem(itemModel: item, isSelected: false),
             ),
           );
         } else {
-          return Expanded(child: AllExpensessItem(itemModel: item));
+          return Expanded(
+            child: AllExpensessItem(itemModel: item, isSelected: false),
+          );
         }
       }).toList(),
     );
