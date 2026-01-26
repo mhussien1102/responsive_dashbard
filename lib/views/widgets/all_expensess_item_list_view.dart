@@ -4,10 +4,16 @@ import 'package:responsive_dashbard/views/widgets/all_expensess_item.dart';
 
 import '../../utils/app_images.dart';
 
-class AllExpensessItemListView extends StatelessWidget {
+class AllExpensessItemListView extends StatefulWidget {
   const AllExpensessItemListView({super.key});
 
-  static const items = [
+  @override
+  State<AllExpensessItemListView> createState() =>
+      _AllExpensessItemListViewState();
+}
+
+class _AllExpensessItemListViewState extends State<AllExpensessItemListView> {
+  final items = [
     AllExpensessItemModel(
       img: Assets.imagesBalance,
       title: 'Balance',
@@ -27,6 +33,7 @@ class AllExpensessItemListView extends StatelessWidget {
       price: r'$20,129',
     ),
   ];
+  int selectIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -39,17 +46,39 @@ class AllExpensessItemListView extends StatelessWidget {
 
         if (index == 1) {
           return Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12),
-              child: AllExpensessItem(itemModel: item, isSelected: false),
+            child: GestureDetector(
+              onTap: () {
+                updateIndex(index);
+              },
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                child: AllExpensessItem(
+                  itemModel: item,
+                  isSelected: selectIndex == index,
+                ),
+              ),
             ),
           );
         } else {
           return Expanded(
-            child: AllExpensessItem(itemModel: item, isSelected: false),
+            child: GestureDetector(
+              onTap: () {
+                updateIndex(index);
+              },
+              child: AllExpensessItem(
+                itemModel: item,
+                isSelected: selectIndex == index,
+              ),
+            ),
           );
         }
       }).toList(),
     );
+  }
+
+  void updateIndex(int index) {
+    setState(() {
+      selectIndex = index;
+    });
   }
 }
