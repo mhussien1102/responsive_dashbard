@@ -2,7 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:responsive_dashbard/utils/app_styles.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key});
+  final Color clr, txtColor;
+  final String txt;
+  const CustomButton({
+    super.key,
+    required this.clr,
+    required this.txt,
+    required this.txtColor,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +21,13 @@ class CustomButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
-          backgroundColor: Color(0xff4EB7F2),
+          backgroundColor: clr,
           elevation: 0,
         ),
-        child: Text('Send Money', style: AppStyles.styleSemiBold18),
+        child: Text(
+          txt,
+          style: AppStyles.styleSemiBold18.copyWith(color: txtColor),
+        ),
       ),
     );
   }
