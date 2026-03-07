@@ -3,6 +3,7 @@ import 'package:responsive_dashbard/views/widgets/custom_background_container.da
 import 'package:responsive_dashbard/views/widgets/lastest_transcation.dart';
 import 'package:responsive_dashbard/views/widgets/lastest_transcation_List_view.dart';
 import 'package:responsive_dashbard/views/widgets/quick_invoice_header.dart';
+import 'package:responsive_dashbard/views/widgets/title_text_field.dart';
 
 import 'custom_text_field.dart';
 
@@ -19,7 +20,7 @@ class QuickInvoice extends StatelessWidget {
           LastestTransciation(),
 
           Divider(height: 48),
-          CustomTextField(),
+          TitleTextField(title: 'Customer name'),
         ],
       ),
     );
