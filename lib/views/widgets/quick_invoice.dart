@@ -19,7 +19,7 @@ class QuickInvoice extends StatelessWidget {
         children: [
           QuickInvoiceHeader(),
           LastestTransciation(),
-          Divider(height: 24),
+          Divider(height: 12),
           QuickInvoiceForm(),
         ],
       ),
